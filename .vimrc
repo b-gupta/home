@@ -24,7 +24,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'w0rp/ale'
 
 " code completition
-Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'ycm-core/YouCompleteMe'
 
 " go code tools/completion
 Plugin 'fatih/vim-go'
