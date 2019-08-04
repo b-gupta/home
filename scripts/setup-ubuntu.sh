@@ -1,5 +1,13 @@
+#!/bin/bash
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root" 
+   exit 1
+fi
+
 echo "source ~/.bashrc_bharat" >> ~/.bashrc
 apt upgrade
+# required packages
+apt install git build-essential cmake python3-dev nodejs npm vim vim-nox vim-gnome autokey-gtk --asume-yes
 
 # setup fzf (fuzzy completion)
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -12,9 +20,6 @@ git clone https://github.com/sickill/vim-monokai.git /tmp/vim-monokai
 mkdir -p ~/.vim/colors && cp /tmp/vim-monokai/colors/*.vim ~/.vim/colors
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-# code completion for go
-apt install build-essential cmake python3-dev nodejs npm vim-nox vim-gnome --asume-yes
 
 # try without YouCompleteMe
 # git clone https://github.com/ycm-core/YouCompleteMe.git ~/.vim/bundle/YouCompleteMe
