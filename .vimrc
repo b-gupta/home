@@ -24,7 +24,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'w0rp/ale'
 
 " code completition
-" Plugin 'ycm-core/YouCompleteMe'
+Plugin 'ycm-core/YouCompleteMe'
 
 " go code tools/completion
 Plugin 'fatih/vim-go'
@@ -34,9 +34,19 @@ Plugin 'Shougo/neocomplete.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" make fzf work
+set rtp+=~/.fzf
+
 syntax enable
 colorscheme monokai
 set hlsearch
 set ignorecase
 set nu
 let g:neocomplete#enable_at_startup = 1
+
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+nnoremap ; :Files<Cr>
