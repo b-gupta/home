@@ -50,3 +50,8 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 nnoremap ; :Files<Cr>
+nnoremap <C-b> :YcmCompleter GoToDefinition<Cr>
+nnoremap <C-f> :Rg<Cr>
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2

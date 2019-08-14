@@ -1,7 +1,7 @@
 [user]
 	name = Bharat Gupta
 	email = bharat@talostrading.com
-	username = bharatgupta88
+	username = b-gupta
 [core]
 	editor = vim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
