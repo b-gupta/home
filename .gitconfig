@@ -103,6 +103,7 @@
 	#############
 	l = log --oneline
 	lg = log --oneline --graph --decorate
+	lgp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	#############
 	ls = ls-files
 	lsf = !git ls-files | grep -i

@@ -1,0 +1,3 @@
+#!/bin/bash
+note=$(find ~/notes -type f -not -path '*/\.*' | fzf)
+[ -z $note ] || gvim $note

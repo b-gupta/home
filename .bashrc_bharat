@@ -27,8 +27,19 @@ alias j='autojump'
 
 export PATH=$PATH:/home/bharat/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/opt/bin
+export PATH=$PATH:/home/bharat/go/bin
 
 export PS1="\[\033[01;32m\]\u\[\033[m\]>\[\033[32m\] \[\033[33;1m\]\w \e[36m\$(git_branch)\[\033[m\] \n\$ "
 
 shopt -s histappend
 export HISTCONTROL=ignoredups:erasedups
+export EDITOR=gvim
+
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+}
+
+echo "Running ~/bin/user-xmodmap-reload-hack..."
+user-xmodmap-reload-hack
