@@ -3,7 +3,7 @@
 #echo "source ~/.bashrc_bharat" >> ~/.bashrc
 # required packages
 sudo apt update
-sudo apt -y install git build-essential cmake python3-dev nodejs npm vim autokey-gtk
+sudo apt -y install git build-essential cmake python3-dev nodejs npm vim autokey-gtk pip fish
 
 # setup fzf (fuzzy completion)
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
